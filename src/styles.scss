@@ -8,3 +8,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .mat-form-field {
   margin-bottom: 15px;
 }
+
+::ng-deep .mat-dialog-container {
+  min-height: 260px !important;
+  max-height: 420px !important;
+  padding: 24px 16px !important; // más compacto, si lo deseas
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

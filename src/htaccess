@@ -1,0 +1,37 @@
+# =============================================================================
+#  .htaccess  ·  App Angular bajo /angular/crudelectronicasimplificado/
+#  Va en la MISMA carpeta que index.html y main.*.js
+#  Súbelo por FTP y renómbralo en el servidor a exactamente:  .htaccess
+# =============================================================================
+
+# 1) Declara el MIME correcto de los módulos JS y el CSS.
+
+<IfModule mod_mime.c>
+  AddType application/javascript .js
+  AddType text/javascript        .mjs
+  AddType text/css               .css
+</IfModule>
+
+# 2) Refuerzo: FUERZA el tipo aunque algo intente servirlo como text/html
+#    (esto es lo que resuelve el error "Expected a JavaScript module script").
+<FilesMatch "\.js$">
+  ForceType application/javascript
+</FilesMatch>
+<FilesMatch "\.mjs$">
+  ForceType text/javascript
+</FilesMatch>
+<FilesMatch "\.css$">
+  ForceType text/css
+</FilesMatch>
+
+# 3) Enrutado: sirve los ficheros reales; el resto → index.html (router Angular).
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /angular/crudelectronicasimplificado/
+
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  RewriteRule ^ index.html [L]
+</IfModule>

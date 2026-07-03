@@ -2,6 +2,8 @@
 
 <!-- Título del diálogo que cambia según estemos editando o creando -->
 <!-- Este elemento es reconocido por Angular Material como el título del diálogo -->
+
+<div style="display: flex; flex-direction: column; justify-content: center;">
 <h2 mat-dialog-title>{{ isEditing ? 'Editar' : 'Nuevo' }} Producto</h2>
 
 <!-- Formulario con evento submit vinculado al método onSubmit() -->
@@ -101,3 +103,5 @@
     </button>
   </div>
 </form>
+
+</div>
