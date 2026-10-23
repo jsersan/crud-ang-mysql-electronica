@@ -3,5 +3,5 @@
 // Ajusta la ruta a la carpeta donde copies backend-php dentro de htdocs.
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:8888/crud-electronica/backend-php'
+  apiUrl: 'https://crud-ang-front-mysql-electronica.onrender.com/api'
 };
