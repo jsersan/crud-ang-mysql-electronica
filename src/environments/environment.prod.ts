@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: '/angular/crudelectronicasimplificado-backend'
+  apiUrl: 'https://crud-ang-front-mysql-electronica.onrender.com/api'
 };
